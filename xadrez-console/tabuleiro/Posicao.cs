@@ -16,6 +16,11 @@ namespace tabuleiro
             this.linhas = linha;
             this.colunas = coluna;
         }
+
+        public Posicao toPosicao()
+        {
+            return new Posicao(8 - linhas, colunas - 'a');
+        }
         public override string ToString()
         {
             return linhas + " , " + colunas;
