@@ -17,6 +17,12 @@ namespace tabuleiro
             this.colunas = coluna;
         }
 
+        public void definirValores(int linhas, int colunas)
+        {
+            this.linhas = linhas;   
+            this.colunas = colunas;
+        }
+
         public Posicao toPosicao()
         {
             return new Posicao(8 - linhas, colunas - 'a');
