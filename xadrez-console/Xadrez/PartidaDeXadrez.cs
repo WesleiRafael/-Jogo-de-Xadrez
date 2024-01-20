@@ -40,6 +40,25 @@ namespace Xadrez
             {
                 capturadas.Add(pecaCapturada);
             }
+            // #jogadaespecial roque pequeno
+            if (p is Rei && destino.colunas == origem.colunas + 2)
+            {
+                Posicao origemT = new Posicao(origem.linhas, origem.colunas + 3);
+                Posicao destinoT = new Posicao(origem.linhas, origem.colunas + 1);
+                Peca T = tab.retirarPeca(origemT);
+                T.incrementarQteMovimentos();
+                tab.colocarPeca(T, destinoT);
+            }
+
+            // #jogadaespecial roque grande
+            if (p is Rei && destino.colunas == origem.colunas - 2)
+            {
+                Posicao origemT = new Posicao(origem.linhas, origem.colunas - 4);
+                Posicao destinoT = new Posicao(origem.linhas, origem.colunas - 1);
+                Peca T = tab.retirarPeca(origemT);
+                T.incrementarQteMovimentos();
+                tab.colocarPeca(T, destinoT);
+            }
             return pecaCapturada;
         }
         public void desfazMovimento(Posicao origem, Posicao destino, Peca pecaCapturada)

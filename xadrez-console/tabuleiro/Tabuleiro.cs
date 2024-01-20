@@ -32,6 +32,7 @@ namespace tabuleiro
 
         public Peca peca(Posicao pos)
         {
+            
             return pecas[pos.linhas, pos.colunas];
 
         }
